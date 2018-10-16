@@ -1,18 +1,20 @@
 <template>
-  <div id="app">
-    <HelloWorld/>
-  </div>
+    <div id="app">
+        <Index/>
+        <layout/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import Index from './components/Index.vue'
+    // import Layout from './components/Layout.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'app',
+        components: {
+            Index
+        }
+    }
 </script>
 
 
@@ -23,13 +25,16 @@ export default {
         font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
         "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
+
     html {
         height: 100%;
     }
+
     #app {
         height: 100%;
         width: 100%;
     }
+
     body {
         height: calc(100% - 1px);
         border-bottom: 1px solid #000;
