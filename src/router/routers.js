@@ -12,23 +12,23 @@ const routes = [
     },
     {
         path: "/article",
-        component: () => import("./../modules/index/view/article"),
+        component: () => import("../modules/index/view/Article"),
         hidden: true
     }, {
         path: "/book",
-        component: () => import("./../modules/index/view/book"),
+        component: () => import("../modules/index/view/Book"),
         hidden: true
     }, {
         path: "/home",
-        component: () => import("./../modules/index/view/home"),
+        component: () => import("../modules/index/view/Home"),
         hidden: true
     }, {
         path: "/me",
-        component: () => import("./../modules/index/view/me"),
+        component: () => import("../modules/index/view/Me"),
         hidden: true
     }, {
         path: "/other",
-        component: () => import("./../modules/index/view/other"),
+        component: () => import("../modules/index/view/Other"),
         hidden: true
     }
 ];
