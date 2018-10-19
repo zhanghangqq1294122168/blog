@@ -9,5 +9,9 @@
 </script>
 
 <style scoped>
-
+    .ui-div{
+        background: pink;
+        height: 100%;
+        width: 100%;
+    }
 </style>

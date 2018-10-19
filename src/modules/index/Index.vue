@@ -1,5 +1,6 @@
 <template>
     <el-container class="ui-container">
+        <!--导航栏-->
         <el-header class="ui-header">
             <el-menu :default-active="this.$router.path" router class="ui-menu" mode="horizontal"
                      @select="handleSelect">
@@ -8,8 +9,11 @@
                 </el-menu-item>
             </el-menu>
         </el-header>
+        <!--主页-->
         <el-main class="ui-main">
-            <router-view></router-view>
+            <transition name="fade" mode="out-in">
+                <router-view/>
+            </transition>
         </el-main>
     </el-container>
 </template>
@@ -19,7 +23,7 @@
         data() {
             return {
                 navList: [
-                    {name: '/Index', navItem: '主页'},
+                    {name: '/Home', navItem: '主页'},
                     {name: '/Article', navItem: '技术专栏'},
                     {name: '/Book', navItem: '技术书单'},
                     {name: '/Me', navItem: '关于我'},
@@ -36,11 +40,10 @@
 </script>
 <style>
     .ui-main {
-        /*background-color: #E9EEF3;*/
-        background-color: pink;
-        color: #333;
-        text-align: center;
-        line-height: 160px;
+        height: 100%;
+        overflow: hidden;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .ui-container {

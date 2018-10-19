@@ -6,11 +6,6 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: "/",
-        component: () => import("./../modules/index/Index"),
-        hidden: true
-    },
-    {
         path: "/article",
         component: () => import("../modules/index/view/Article"),
         hidden: true

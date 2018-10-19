@@ -11,5 +11,6 @@
 <style scoped>
 .ui-div{
     background: brown;
+    height: 100%;
 }
 </style>
