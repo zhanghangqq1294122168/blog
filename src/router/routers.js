@@ -6,24 +6,21 @@ Vue.use(VueRouter);
 
 const routes = [
     {
+        path: "/",
+        name: 'home',
+        component: () => import("../modules/home/Home"),
+        hidden: true
+    }, {
         path: "/article",
-        component: () => import("../modules/index/view/Article"),
+        component: () => import("../modules/home/Article"),
         hidden: true
     }, {
         path: "/book",
-        component: () => import("../modules/index/view/Book"),
-        hidden: true
-    }, {
-        path: "/home",
-        component: () => import("../modules/index/view/Home"),
-        hidden: true
-    }, {
-        path: "/me",
-        component: () => import("../modules/index/view/Me"),
+        component: () => import("../modules/home/Book"),
         hidden: true
     }, {
         path: "/other",
-        component: () => import("../modules/index/view/Other"),
+        component: () => import("../modules/home/Other"),
         hidden: true
     }
 ];

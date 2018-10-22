@@ -4,6 +4,12 @@
         <el-header class="ui-header">
             <el-menu :default-active="this.$router.path" router class="ui-menu" mode="horizontal"
                      @select="handleSelect">
+                <el-menu-item index="/">主页</el-menu-item>
+                <el-submenu index="2">
+                    <template slot="title">技术专栏</template>
+                    <el-menu-item index="2-1">选项1</el-menu-item>
+                    <el-menu-item index="2-2">选项2</el-menu-item>
+                </el-submenu>
                 <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
                     {{ item.navItem }}
                 </el-menu-item>
@@ -15,20 +21,19 @@
                 <router-view/>
             </transition>
         </el-main>
+        <!--<el-footer>-->
+            <!--声明：文章版权属于作者，受法律保护。没有作者书面许可不得转载。若作者同意转载，必须以超链接形式标明文章原始出处和作者。-->
+        <!--</el-footer>-->
     </el-container>
 </template>
 
 <script>
+    import navList from './mock.js';
+
     export default {
         data() {
             return {
-                navList: [
-                    {name: '/Home', navItem: '主页'},
-                    {name: '/Article', navItem: '技术专栏'},
-                    {name: '/Book', navItem: '技术书单'},
-                    {name: '/Me', navItem: '关于我'},
-                    {name: '/Other', navItem: '其他'}
-                ]
+                navList: navList
             };
         },
         methods: {
@@ -47,7 +52,7 @@
     }
 
     .ui-container {
-        height: 100%;
+        height: 1500px;
         overflow: hidden;
         position: relative;
     }
