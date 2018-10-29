@@ -2,14 +2,13 @@
     <el-container class="ui-container">
         <!--导航栏-->
         <el-header class="ui-header">
-            <el-menu :default-active="this.$router.path" router class="ui-menu" mode="horizontal"
-                     @select="handleSelect">
+            <el-menu :default-active="this.$router.path" router class="ui-menu" mode="horizontal">
                 <el-menu-item index="/">主页</el-menu-item>
-                <el-submenu index="2">
-                    <template slot="title">技术专栏</template>
-                    <el-menu-item index="2-1">选项1</el-menu-item>
-                    <el-menu-item index="2-2">选项2</el-menu-item>
-                </el-submenu>
+                <!--<el-submenu index="2">-->
+                    <!--<template slot="title">技术专栏</template>-->
+                    <!--<el-menu-item index="2-1">选项1</el-menu-item>-->
+                    <!--<el-menu-item index="2-2">选项2</el-menu-item>-->
+                <!--</el-submenu>-->
                 <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
                     {{ item.navItem }}
                 </el-menu-item>
@@ -37,9 +36,9 @@
             };
         },
         methods: {
-            handleSelect(key, keyPath) {
-                console.log(key, keyPath);
-            }
+            // handleSelect(key, keyPath) {
+            //     console.log(key, keyPath);
+            // }
         }
     }
 </script>
