@@ -10,6 +10,9 @@ var navList = [
     {
         name: '/Other',
         navItem: '其他'
+    }, {
+        name: '/Editor',
+        navItem: 'Editor'
     }
 ];
 

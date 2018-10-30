@@ -22,6 +22,10 @@ const routes = [
         path: "/other",
         component: () => import("../modules/home/Other"),
         hidden: true
+    },{
+        path: "/editor",
+        component: () => import("../modules/home/Editor"),
+        hidden: true
     }
 ];
 
