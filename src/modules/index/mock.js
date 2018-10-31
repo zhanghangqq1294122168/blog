@@ -12,7 +12,7 @@ var navList = [
         navItem: '其他'
     }, {
         name: '/Editor',
-        navItem: 'Editor'
+        navItem: '工作台'
     }
 ];
 

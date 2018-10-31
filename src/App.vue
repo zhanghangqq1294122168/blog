@@ -35,7 +35,6 @@
 
     body {
         height: calc(100% - 1px);
-        border-bottom: 1px solid #000;
     }
 </style>
 
