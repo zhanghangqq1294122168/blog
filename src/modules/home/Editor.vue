@@ -8,12 +8,8 @@
                 <el-input v-model="formData.classify" size="small"></el-input>
             </el-form-item>
             <el-form-item label="内容">
-                <!--<el-input v-model="formData.content"-->
-                <!--type="textarea"-->
-                <!--:autosize="{ minRows: 2, maxRows: 4}"-->
-                <!--placeholder="请输入内容">-->
-                <!--</el-input>-->
-                <rich-text ref="richText"></rich-text>
+                <mavon-editor v-model="formData.content"/>
+                <mavon-editor ref=md @imgAdd="$imgAdd" @imgDel="$imgDel"></mavon-editor>
             </el-form-item>
 
             <el-form-item>
@@ -26,21 +22,14 @@
 
 <script>
     import {saveArticle} from '../../api/editor.js'
-    import RichText from "./richText";
 
     export default {
-        components: {RichText},
         data() {
             return {
                 formData: {
                     title: '',
-                    classify: ''
-                }
-                ,
-                Data: {
-                    title: formData.title,
-                    classify: this.formData.classify,
-                    content: this.$refs.richText.content
+                    classify: '',
+                    content: ''
                 }
             }
         },
@@ -49,15 +38,27 @@
                 saveArticle(this.formData).then(res => {
                     console.log(this.formData)
                 })
+            },
+            // 绑定@imgAdd event
+            $imgAdd(pos, $file) {
+                // 第一步.将图片上传到服务器.
+                var formdata = new FormData();
+                formdata.append('image', $file);
+                axios({
+                    url: 'server url',
+                    method: 'post',
+                    data: formdata,
+                    headers: {'Content-Type': 'multipart/form-data'},
+                }).then((url) => {
+                    // 第二步.将返回的url替换到文本原位置![...](0) -> ![...](url)
+                    // $vm.$img2Url 详情见本页末尾
+                    $vm.$img2Url(pos, url);
+                })
             }
         }
     }
 </script>
 
 <style scoped>
-    .editor {
-        padding: 7%;
-        width: 70%;
-        float: contour;
-    }
+
 </style>
