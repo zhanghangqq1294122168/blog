@@ -7,3 +7,10 @@ export function saveArticle(data) {
         data: data
     })
 }
+// export function saveArticle(data) {
+//     return http({
+//         method: "post",
+//         url: "/article/save",
+//         data: data
+//     })
+// }
